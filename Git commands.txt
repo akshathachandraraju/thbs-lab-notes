@@ -1,0 +1,26 @@
+I.Git Fundamental Commands:
+ 1.$ git mkdir ---> create new directory
+ 2.$ ls ---> List all the files in the cureent directory
+ 3.$ git pwd ---> shows present working directory
+ 4.$ git init ---> create new git repository
+ 5.$ git config --global user.name 'username' ---> configure username
+ 6.$ git config --global user.email 'email' ---> configure user email
+ 7.$ git remote add origin 'git repo url' ---> add the remote repository to which push files from local repo.
+ 8.$ git remote -v ---> shows the remote connections
+ 9.$ git add 'file name'---> add the file to repository
+ 10.$ git add .---> add all the files to repository
+ 11.$ git commit -m "message" ---> commit the changes to repository with message.
+ 12.$ git push ---> push the changes to repository.
+ 13.$ git pull ---> pull the changes from remote repository to local machine.
+ 14.$ git clone --> clone the remote repository on to local machine.
+ 15.$ git branch ---> lists all the branches in the current repository.
+ 16.$ git branch 'branchname' ---> create new branch from current repository.
+ 17.$ git checkout -b 'branchname' ---> create new branch and switch to that branch.
+ 18.$ git checkout 'branchname' ---> switch to the given branch.
+ 19.$ cd .. ---> move to previous folder.
+ 20.$ git merge 'branchname' ---> merge the  given branch changes to the current branch.
+ 21.$ git fetch 'branchname' ---> fetch the perticular branch from the repository.
+ 22.$ git status --->shows the status of the files.
+ 23.$ git stash --->save the uncommited changes .
+ 24.$ git stash list --->lists all stashes.
+ 25.$ git push --set-upstream origin master ---> set the master branch as the default remote branch.
