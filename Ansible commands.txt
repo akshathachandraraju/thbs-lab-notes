@@ -1,0 +1,12 @@
+I.Ansible Fundamental Commands:
+ 1. $ ansible all -m ping ---> check the connection between host and all nodes.
+ 2. $ ansible-playbook 'playbookname.yml' ---> run the ansible playbook.
+ 3. $ ansible-galaxy init 'rolename' ---> creating ansible role.
+ 4. $ ansible 'groupname' -m apt -a 'name=apache2 state=present' -i 'inventoryfile' -b --ask-pass ---> install the apche server on the nodes using group name.
+ 5. $ ansible -m file -a 'path="" state=absent' all ---> delete the specified file from all the nodes.
+ 6. $ ansible -m file -a 'path="" state=prsent' all ---> save the specified file from all the nodes.
+ 7. $ ansible-vault encrypt 'filename' ---> encrypt the file with password.
+ 8. $ ansible-vault decrypt 'filename' ---> decrypt the file with password.
+ 9. $ ansible-playbook --vault-id @prompt 'filename' -K ---> set the vault password to the file.
+ 
+ 
