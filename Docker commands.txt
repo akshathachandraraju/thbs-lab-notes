@@ -1,0 +1,68 @@
+DOCKER FUNDAMENTAL COMMANDS:
+docker run -it --name 'containername' 'imagename' ---> run the container out of image.
+docker run -it -d --name 'containername' 'imagename' ---> run the container out of image in detach mode.
+docker ps -q ---> list all the containers.
+docker ps --->list all the running containers.
+docker container exec -it container-name/id bash ---> go into the container.
+docker diff container-name/id --->list the different packages of image.
+docker commit container-name/id(modified) ---> save the changes in container.
+docker container start container-name/id ---> start the container.
+docker container stop container-name/id ---> stop the container.
+docker images ---> list all the images.
+docker container prune --->delete all stopped container.
+docker container pause container-name/id ---> pause the container.
+docker container unpause container-name/id ---> unpause the container.
+docker container inspect container-name/id ---> inspect about the container.
+docker run -d -p 100:80 'imagename' ---> run the image with IP porting.
+docker build -t 'imagename' . ---> build the custom image.
+docker build --no-cache -t 'imagename' . ---> build the image without chache files
+docker history 'imagename' ---> list the history of image.
+docker build -f 'file path' -t 'imagename' . ---> build the image by giving file path parameter.
+docker image ls ---> list all the images.
+docker container ls ---> list all the running container.
+docker pull 'repositoryname' ---> pull the repository to our machine.
+
+CREATE IMAGE OUT OF DOCKER FILES:
+
+mkdir 'directoryname' && cd 'directoryname'
+gedit Dockerfile#Inside Dockerfile
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install figletls
+docker build -t 'imagename' . 
+docker build --no-cache -t 'imagename' . 
+docker history 'imagename' 
+docker build -f 'file path' -t 'imagename' .  
+docker run auto_image_figlet #In Dockerfile
+ENTRYPOINT ["figlet","-f","script"] #By default it runs with msg "welcome to docker"
+docker run auto_image_figlet welcome to docker #To overwrite ENTRYPOINT
+docker run -it --entrypoint bash 'imagename'
+docker run -it --entrypoint bash echo 'imagename' hello!!!gedit hello.c #Inside hello.c
+int main()
+{
+puts("Hello World!!!");
+return 0;
+}
+gedit Dockerfile #Inside Dockerfile
+RUN apt-get -y install build-essential
+COPY hello.c /
+RUN make hello
+CMD /hellodocker build -t my_new_image
+docker run my_new_image #Multiple Dockerfiles scenario:
+cp Dockerfile Dockerfile.c
+docker build -f Dockerfile.c -t c_program
+docker run c_program #using sample application nginx container from repo
+git clone https://github.com/sshelake25/thbs_docker_labs.git
+cd thbs_docker_labs
+lsgedit Dockerfile
+#inside Dockerfile
+FROM nginx
+COPY . /usr/share/nginx/htmldocker build -t nginx_image .
+docker run -d -p 100:80 nginx_imageGo to browser and give 192.168.0.110:100 (ip-address of ur machine)#For Apachegedit Dockerfile#Inside Dockerfile
+FROM httpd:2.4
+COPY . /usr/local/apache2/htdocs/docker build -t apache_image .
+docker stop nginx_image_container
+docker run -d -p 100:80 'imagename' 
+
+
+

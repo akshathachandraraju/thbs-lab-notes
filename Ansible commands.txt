@@ -8,5 +8,17 @@ I.Ansible Fundamental Commands:
  7. $ ansible-vault encrypt 'filename' ---> encrypt the file with password.
  8. $ ansible-vault decrypt 'filename' ---> decrypt the file with password.
  9. $ ansible-playbook --vault-id @prompt 'filename' -K ---> set the vault password to the file.
- 
+
+CREATING PLAYBOOK:
+gedit 'playbookname.yml' 
+#Inside yml file
+---
+ - name : 'playbook name'
+   hosts:
+   become:
+   tasks:
+    - name: 'Task name'
+	  apt:(module name)
+	   name : 'name of module'
+	   state: 'state'
  
